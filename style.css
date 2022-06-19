@@ -21,13 +21,17 @@ textarea {
   border-bottom: 10px solid black;
 }
 
+.container {
+  padding-bottom: 50px;
+}
+
 .description {
   white-space: pre-wrap;
 }
 
 .time-block {
   text-align: center;
-  border-radius: 15px;
+  /* border-radius: 15px; */
 }
 
 .row {
@@ -48,24 +52,26 @@ textarea {
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: #f378ce;
   color: white;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: #81ca81;
   color: white;
 }
 
-.saveBtn {
+.save-btn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06aed5;
+  background-color: #19b6d9;
   color: white;
 }
 
-.saveBtn i:hover {
+.save-btn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
+
+
