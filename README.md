@@ -30,6 +30,7 @@ Link to deployed application: [Workday Scheduler](https://katelynking.github.io/
 1. Click link to open application. 
 2. Type plans for each hour block and click the save button.
 
+![Workday Scheduler](./workday-scheduler.gif)
 
 <a name="license"></a>
 ## License 
