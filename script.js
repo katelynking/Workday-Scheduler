@@ -2,12 +2,12 @@ $(document).ready(function() {
 
 var times = {
   before: ["12am", "1am", "2am", "3am", "4am", "5am", "6am", "7am", "8am"],
-  during: ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm"],
-  after: ["7pm", "8pm", "9pm", "10pm", "11pm"]
+  during: ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"],
+  after: ["6pm", "7pm", "8pm", "9pm", "10pm", "11pm"]
 }; 
-var currentDay = moment().format("dddd, MMMM Do YYYY");
+var currentDay = moment().format("ddd, MMMM Do YYYY");
 $("#date").text(currentDay);
-var currentTime = moment().format("hh:mm A");
+var currentTime = moment().format("hh:mma");
 $("#time").text(currentTime);
 var currentHour;
   
@@ -18,9 +18,7 @@ function runTimer() {
   colorChange();
   
   let displayTime = setInterval(function() {
-    currentDay = moment().format("MMMM Do, YYYY");
-    $("#date").text(currentDay);
-    currentTime = moment().format("hh:mma");
+    // currentTime = moment().format("hh:mma");
     $("#time").text(currentTime);
     colorChange();
   }, 1000);
@@ -41,13 +39,13 @@ function colorChange() {
   if (times.during = currentHour) {
     $("#" + currentHour).css("background-color", "#f378ce");
     
-    // for (let i = 0; i < times.during.indexOf(currentHour); i++) {
-    //   $("#" + times.during[i]).css("background-color", "#d3d3d3");
-    // }
+    for (let i = 0; i < times.during.indexOf(currentHour); i++) {
+      $("#" + times.during[i]).css("background-color", "#d3d3d3");
+    }
     
-    // for (let i = times.during.length - 1; i > times.during.indexOf(currentHour); i--) {
-    //   $("#" + times.during[i]).css("background-color", "81ca81");
-    //   }
+    for (let i = times.during.length - 1; i > times.during.indexOf(currentHour); i--) {
+      $("#" + times.during[i]).css("background-color", "81ca81");
+      }
     }
   }
 
