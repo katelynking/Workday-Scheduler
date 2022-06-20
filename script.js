@@ -1,20 +1,32 @@
 $(document).ready(function() {
 var currentDay = moment().format("ddd, MMMM Do YYYY");
 $("#date").text(currentDay);
-var currentTime = moment().format("hh:mma");
+var currentTime = moment().format("hh:mm:ss a");
 $("#time").text(currentTime);
+
 
   
 
 function runTimer() {
   $("#date").text(currentDay);
+  $('#time').text(currentTime);
   colorChange();
+  
+  
+  setInterval(function() {
+    currentDay = moment().format("ddd, MMMM Do YYYY");
+    $("#date").text(currentDay);
+    currentTime = moment().format("hh:mm:ss a");
+    $('#time').text(currentTime);
+    colorChange();
+  }, 1000);
 }
+
 
 
 function colorChange() {
   var currentHour = moment().hours();
-
+  
   $(".notes").each(function() {
     var hour = parseInt($(this).attr("id"));
 
@@ -27,8 +39,10 @@ function colorChange() {
     }  
 })
 }
-  runTimer();
+runTimer();  
+
 });
+
 
 
 $(".save-btn").click(function(){
@@ -86,4 +100,5 @@ $(".save-btn").click(function(){
   }
 
   renderNotes();
+
 
